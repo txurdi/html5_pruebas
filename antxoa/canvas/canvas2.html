@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Canvas</title>
+    <script type="text/javascript"><!--
+window.addEventListener('load', function () {
+  // Llamamos al elemento canvas.
+  var elem = document.getElementById('myCanvas');
+  if (!elem || !elem.getContext) {
+    return;
+  }
+
+  // Contexto 2D.
+  var context = elem.getContext('2d');
+  if (!context) {
+    return;
+  }
+
+// Relleno, borde y contorno
+context.fillStyle   = '#abc'; 
+context.strokeStyle = '#000'; 
+context.lineWidth   = 2;
+
+//ejemplo 2
+context.beginPath();
+context.moveTo(10, 10); // coordenadas X,Y
+context.lineTo(100, 10);
+context.lineTo(10, 100);
+context.lineTo(10, 10);
+
+//aplicamos el relleno y el contorno
+context.fill();
+context.stroke();
+
+//cerramos el camino
+context.closePath();
+
+//imagen
+img.src = 'logo.gif';
+}, false);
+
+
+    // --></script>
+  </head>
+  <body>
+    <p>
+	<canvas id="myCanvas" width="200" height="150">
+	</canvas>
+	</p> 
+  </body>
+
+</html>

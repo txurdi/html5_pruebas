@@ -1,0 +1,20 @@
+
+2012-02-11:
+
+Novedad en HTML5: Funciones de Javascript propias en la especificación HTML5.
+AJAX simplificado, métodos nativos.
+
+Perfil maquetador
+Perfil programador
+
+
+
+
+
+
+
+
+
+
+
+

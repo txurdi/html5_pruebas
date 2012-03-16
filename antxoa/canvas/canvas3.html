@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Canvas</title>
+    <script type="text/javascript"><!--
+window.addEventListener('load', function () {
+  // Llamamos al elemento canvas.
+  var elem = document.getElementById('myCanvas');
+  if (!elem || !elem.getContext) {
+    return;
+  }
+
+  // Contexto 2D.
+  var context = elem.getContext('2d');
+  if (!context) {
+    return;
+  }
+
+//ejemplo 3
+
+  // Creamos imagen
+  var img = new Image();
+
+  // Cuando la imagen se cargue, se pintará en canvas
+  img.addEventListener('load', function () {
+    // Resolución original: x, y.
+    context.drawImage(this, 0, 0);
+
+    // Redimensionamos la imagen: x, y, w, h.
+    context.drawImage(this, 160, 0, 120, 70);
+
+    // Recortamos y redimensionamos la imagen: sx, sy, sw, sh, dx, dy, dw, dh.
+    context.drawImage(this, 8, 20, 140, 50, 0, 150, 350, 70);
+  }, false);
+
+  img.src = 'logo.gif';
+}, false);
+
+
+    // --></script>
+  </head>
+  <body>
+    <p>
+	<canvas id="myCanvas" width="200" height="150">
+	</canvas>
+	</p> 
+  </body>
+
+</html>

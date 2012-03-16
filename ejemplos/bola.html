@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>Ejemplo de canvas</title>
+    <script type="text/javascript"><!--
+window.addEventListener('load', function () {
+  // Llamamos al elemento canvas.
+  var elem = document.getElementById('SocCanvas');
+  if (!elem || !elem.getContext) {
+    return;
+  }
+
+  // Contexto 2D.
+  var context = elem.getContext('2d');
+  if (!context) {
+    return;
+  }
+
+//ejemplo 3
+
+  // Creamos imagen
+  var img = new Image();
+
+  // Cuando la imagen se cargue, se pintará en canvas
+  img.addEventListener('load', function () {
+    // Resolución original: x, y.
+//    context.drawImage(this, 0, 0);
+
+    // Redimensionamos la imagen: x, y, w, h.
+//    context.drawImage(this, 0, 0, 16, 16);
+
+	//Coger el cuarto bajo izquierdo de la imagen
+//    context.drawImage(this, 90, 90, 90, 90, 0, 0, 100, 100);
+
+	//girar el logo
+// translate context to center of canvas
+    context.translate(90, 90);
+    // rotate 45 degrees clockwise
+    context.rotate(Math.PI/2);
+//    context.rotate(2*3,14);
+    context.translate(-90, -90);
+    context.drawImage(this, 0, 0);
+    
+
+  }, false);
+
+  img.src = 'socsoft180.png';
+}, false);
+
+
+    // --></script>
+		<meta name="description" content="" />
+		<meta name="author" content="txurdi" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+	</head>
+	<body>
+		<div>
+			<header>
+				<h1>La bola de SocSoft:</h1>
+			</header>
+			<nav>
+				<p>
+					<a href="/">Inicio</a>
+				</p>
+				<p>
+					<a href="/contact">Otro menú</a>
+				</p>
+			</nav>
+			<div>
+	<canvas id="SocCanvas" width="180" height="180">
+	</canvas>
+	<img src="socsoft180.png" />
+			</div>
+			<footer>
+				<p>
+					&copy; Copyright  by @txurdi
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>
